@@ -1,5 +1,4 @@
 from logging import PlaceHolder
-import traceback
 import os
 from threading import currentThread
 import venv
@@ -15,7 +14,6 @@ from datetime import datetime
 from disnake.components import SelectMenu,SelectOption
 from disnake.utils import get
 import pytz
-from requests import options     #   pip install pytz
 bot = commands.Bot(command_prefix=".", intents= disnake.Intents.all(), activity= disnake.Game(f'Moderate Your Server',status = disnake.Status.online))
 async def dbconnect():
     global conn 
