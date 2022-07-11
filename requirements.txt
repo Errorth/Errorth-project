@@ -1,3 +1,2 @@
-python>=3.10
 disnake==2.5.1
 pytz==2022.1
