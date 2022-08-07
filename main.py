@@ -1524,5 +1524,5 @@ async def on_message(inter: CommandInteraction):
     res2 = csl.fetchall()    
     print(res2)
     conn.commit()
-    
+TOKEN = 'OTg0MDM1MDg0OTk2ODQxNTQy.G6bb_0.0cFUO9TxVvFLPKXRTqcQKYsx-yYtGfQFL-MCwA'
 bot.run(TOKEN)
