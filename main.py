@@ -39,7 +39,6 @@ async def on_ready():
     The bot is Ready.
     All cogs has been loaded.
     -----------------
-        Created: by Mayki#5252
             Version: 1.8
             Last Update: Fix bugs, Add private voice rooms   
             
@@ -51,7 +50,6 @@ async def on_ready():
     channelbot = bot.get_channel(988856837061365771)
     #await channelbot.send(f"""
     #-----------------
-    #    Created: by Mayki#5252
     #        Version: 1.8
     #        Last Update:Fix bugs, Add private voice rooms
     #""")
@@ -91,10 +89,9 @@ async def on_voice_state_update(member, before, after):
             await channel2.delete()
             if channel2.members == 0:
                 csl.execute("""DELETE FROM provoice WHERE username = ?""",(f'{member}',))
-#in dev
+
 class limiter(disnake.ui.Modal):
         def __init__(self):
-            # The details of the modal, and its components
             components = [
                 disnake.ui.TextInput(
                     label="Max Count",
@@ -110,7 +107,6 @@ class limiter(disnake.ui.Modal):
                 components=components,
             )
 
-    # The callback received when the user input is completed.
         async def callback(self, inter: disnake.ModalInteraction):
             embed = disnake.Embed(title="Limit")
             for key, value in inter.text_values.items():
@@ -126,7 +122,6 @@ class limiter(disnake.ui.Modal):
                 await inter.response.send_message(embed=disnake.Embed(description=':white_check_mark:Successfully changed!'),ephemeral=True)
 class namer(disnake.ui.Modal):
         def __init__(self):
-            # The details of the modal, and its components
             components = [
                 disnake.ui.TextInput(
                     label="New Name",
@@ -142,7 +137,6 @@ class namer(disnake.ui.Modal):
                 components=components,
             )
 
-    # The callback received when the user input is completed.
         async def callback(self, inter: disnake.ModalInteraction):
             embed = disnake.Embed(title="Ticket")
             for key, value in inter.text_values.items():
@@ -168,7 +162,6 @@ class namer(disnake.ui.Modal):
                 await inter.send("It should take 10 minutes since the last name change",ephemeral=True)
 class owns(disnake.ui.Modal):
         def __init__(self):
-            # The details of the modal, and its components
             components = [
                 disnake.ui.TextInput(
                     label="New Name",
@@ -184,7 +177,6 @@ class owns(disnake.ui.Modal):
                 components=components,
             )
 
-    # The callback received when the user input is completed.
         async def callback(self, inter: disnake.ModalInteraction):
             embed = disnake.Embed(title="Ticket")
             for key, value in inter.text_values.items():
@@ -202,7 +194,6 @@ class Warn(disnake.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    # Creates a row of buttons and when one of them is pressed, it will send a message with the number of the button.
 
     @disnake.ui.button(label="UNWARN", style=ButtonStyle.red)
     async def first_button(
@@ -216,7 +207,6 @@ class RowButtons(disnake.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    # Creates a row of buttons and when one of them is pressed, it will send a message with the number of the button.
 
     @disnake.ui.button(label="✅", style=ButtonStyle.green)
     async def first_button(
@@ -237,7 +227,6 @@ class RoleButtons(disnake.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    # Creates a row of buttons and when one of them is pressed, it will send a message with the number of the button.
 
     @disnake.ui.button(label="📓IT", style=ButtonStyle.blurple)
     async def first_button(
@@ -274,7 +263,6 @@ class RoomBut(disnake.ui.View):
         global channel2
         super().__init__(timeout=None)
 
-    # Creates a row of buttons and when one of them is pressed, it will send a message with the number of the button.
 
     @disnake.ui.button(label="☠", style=ButtonStyle.gray)
     async def limit(
