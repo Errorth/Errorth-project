@@ -1,6 +1,5 @@
 from logging import PlaceHolder
 import os
-from threading import currentThread
 import venv
 import traceback
 import disnake
